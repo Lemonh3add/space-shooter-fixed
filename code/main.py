@@ -40,7 +40,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         # if event.type == pygame.KEYDOWN and event.key == pygame.K_1:
-        #     print(1)
+        #     print(1)    
         # if event.type == pygame.MOUSEMOTION:
         #     player_rect.center = event.pos
             
@@ -53,6 +53,10 @@ while running:
     # normalize player vector for equal movement speed when multiple direction keys are pressed. 
     player_direction = player_direction.normalize() if player_direction else player_direction
     player_rect.center += player_direction * player_speed * dt
+        
+    recent_keys = pygame.key.get_just_pressed()
+    if recent_keys[pygame.K_SPACE]:
+        print('fire lasers')
         
     # draw game
     diplay_surface.fill('darkgray')
