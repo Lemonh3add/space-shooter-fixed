@@ -1,4 +1,3 @@
-from typing import Any
 import pygame
 from os.path import join
 from random import randint, uniform
